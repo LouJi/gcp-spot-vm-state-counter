@@ -25,7 +25,15 @@ export FIRESTORE_DOC_ID="$FIRESTORE_DOC_ID"
 # --- Install Python dependencies if not already present ---
 if ! python3 -c "import google.cloud.firestore" 2>/dev/null; then
   echo "Installing dependencies..."
-  pip3 install --quiet google-cloud-firestore google-cloud-storage requests
+  
+# Install pip and dependencies
+apt-get update -y
+apt-get install -y python3-pip python3-dev
+
+# Verify pip3 exists before using it
+which pip3 || { echo "pip3 not found after install"; exit 1; }
+
+pip3 install --break-system-packages --quiet google-cloud-firestore google-cloud-storage requests
 fi
 
 # --- Copy counter script (it was baked into the instance template metadata) ---
