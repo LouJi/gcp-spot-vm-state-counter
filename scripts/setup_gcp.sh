@@ -4,8 +4,8 @@
 
 set -euo pipefail
 
-PROJECT_ID="[YOUR_PROJECT_ID]"
-REGION="[GCP_ZONE]"
+PROJECT_ID="${1:?Usage: ./setup_gcp.sh <PROJECT_ID>}"
+REGION="${2:-us-central1}"
 BUCKET="${PROJECT_ID}-vm-logs"
 SA_NAME="counter-sa"
 SA_EMAIL="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
