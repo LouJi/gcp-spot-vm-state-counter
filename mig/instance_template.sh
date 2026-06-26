@@ -6,7 +6,7 @@
 set -euo pipefail
 
 PROJECT_ID="${GCP_PROJECT_ID:?Set GCP_PROJECT_ID}"
-ZONE="[GCP-ZONE]"
+ZONE="${ZONE:?Set ZONE}"
 BUCKET="${PROJECT_ID}-vm-logs"
 TEMPLATE_NAME="spot-counter-template"
 MIG_NAME="spot-counter-mig"
