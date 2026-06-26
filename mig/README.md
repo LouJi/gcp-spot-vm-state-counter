@@ -6,6 +6,7 @@ Deploys the stateful counter using a Managed Instance Group with a single Spot V
 
 ```bash
 export GCP_PROJECT_ID="[YOUR_PROJECT_ID]"
+export ZONE="[YOUR_MIG_ZONE]"
 chmod +x instance_template.sh
 ./instance_template.sh
 ```
