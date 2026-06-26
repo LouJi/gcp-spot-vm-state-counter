@@ -18,7 +18,6 @@ gcloud compute instance-templates create "$TEMPLATE_NAME" \
   --project="$PROJECT_ID" \
   --machine-type="e2-small" \
   --provisioning-model=SPOT \
-  --instance-termination-action=DELETE \
   --service-account="$SA_EMAIL" \
   --scopes="cloud-platform" \
   --metadata-from-file=\
